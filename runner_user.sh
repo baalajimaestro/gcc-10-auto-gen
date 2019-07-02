@@ -66,9 +66,6 @@ tg_sendinfo "<code>Checked out and pushed GCC-10</code>"
 echo "Job Successful!"
 }
 
-
-
-
 build_env
 build_conf
 run
