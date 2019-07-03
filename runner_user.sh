@@ -55,7 +55,7 @@ echo "Build finished!"
 }
 
 ##### Here's the blecc megik
-push()
+push_gcc()
 {
 sudo chmod -R 777 $HOME/x-tools
 cd $HOME/x-tools/aarch64.*
@@ -72,4 +72,4 @@ echo "Job Successful!"
 build_env
 build_conf
 run
-push
+push_gcc
