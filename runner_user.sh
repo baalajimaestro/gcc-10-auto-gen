@@ -23,12 +23,13 @@ cd scripts
 bash setup/android_build_env.sh  > /dev/null 2>&1
 cd ..
 rm -rf scripts
-git clone https://github.com/crosstool-ng/crosstool-ng
+sudo apt install help2man libtool-bin wget -y > /dev/null 2>&1
+git clone https://github.com/crosstool-ng/crosstool-ng > /dev/null 2>&1
 cd crosstool-ng
-./bootstrap
-./configure
-make -j$(nproc)
-sudo make install
+./bootstrap > /dev/null 2>&1
+./configure > /dev/null 2>&1
+make -j$(nproc) > /dev/null 2>&1
+sudo make install > /dev/null 2>&1
 cd ..
 rm -rf crosstool-ng
 echo "Build Dependencies Installed....."
@@ -46,16 +47,18 @@ export LOC=$(cat /tmp/loc)
 
 run()
 {
-git clone https://github.com/baalajimaestro/ct-ng-configs -b GCC-10
+echo "Starting build!"
+git clone https://github.com/baalajimaestro/ct-ng-configs -b GCC-10 > /dev/null 2>&1
 cd ct-ng-configs
 ct-ng build
+echo "Build finished!"
 }
 
 ##### Here's the blecc megik
 push()
 {
 sudo chmod -R 777 $HOME/x-tools
-cd $HOME/x-tools/aarch64-maestro-linux-gnu
+cd $HOME/x-tools/aarch64.*
 git init
 git add .
 git checkout -b $(date +%d%m%y)
