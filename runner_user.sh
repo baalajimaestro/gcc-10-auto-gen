@@ -50,7 +50,7 @@ run()
 echo "Starting build!"
 git clone https://github.com/baalajimaestro/ct-ng-configs -b GCC-10 > /dev/null 2>&1
 cd ct-ng-configs
-ct-ng build
+ct-ng build > /dev/null 2>&1
 echo "Build finished!"
 }
 
