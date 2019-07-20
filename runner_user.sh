@@ -16,6 +16,7 @@ build_env()
 . "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"/telegram
 TELEGRAM_TOKEN=$(cat /tmp/tg_token)
 export TELEGRAM_TOKEN
+sudo apt install help2man libtool-bin wget curl -y > /dev/null 2>&1
 tg_sendinfo "<code>[MaestroCI]: GCC-10 Compiler Job rolled!</code>"
 cd ~
 git clone https://github.com/akhilnarang/scripts > /dev/null 2>&1
@@ -23,7 +24,6 @@ cd scripts
 bash setup/android_build_env.sh  > /dev/null 2>&1
 cd ..
 rm -rf scripts
-sudo apt install help2man libtool-bin wget -y > /dev/null 2>&1
 git clone https://github.com/crosstool-ng/crosstool-ng > /dev/null 2>&1
 cd crosstool-ng
 ./bootstrap > /dev/null 2>&1
